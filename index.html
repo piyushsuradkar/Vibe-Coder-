@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SIXSENSE — Premium Collection</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<!-- CURSOR -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-percent">0%</div>
+  <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+  <div class="loader-label">Loading Collection</div>
+  <div class="loader-logo">SIX<span>SENSE</span></div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">SIX<span>SENSE</span></a>
+  <ul class="nav-links">
+    <li><a href="#shop">Collections</a></li>
+    <li><a href="#story">Our Story</a></li>
+    <li><a href="#accessories">Accessories</a></li>
+    <li><a href="/contact">Contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <a href="/cart" class="nav-icon" style="position:relative;">
+      Bag
+      <span class="cart-count" style="display:none;">0</span>
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow fade-up">New Season 2026</div>
+    <h1 class="hero-title fade-up delay-1">Wear<br>Your<br><em>Instinct</em></h1>
+    <p class="hero-desc fade-up delay-2">
+      Sixsense — where refined luxury meets raw sensibility. Premium garments, accessories, and jewellery crafted for those who dress with intention.
+    </p>
+    <div class="hero-cta-group fade-up delay-3">
+      <a href="#shop" class="btn-primary">Explore Collection</a>
+      <a href="#story" class="btn-ghost">Our Philosophy</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-image-bg"></div>
+    <div class="hero-pattern"></div>
+    <div class="hero-feature-text">
+      <p>Refined<br>by Nature</p>
+      <span>Premium Since 2020</span>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    Scroll to Explore
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-section">
+  <div class="marquee-track">
+    <span class="marquee-item">Premium Clothing</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Designer Hats</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Luxury Footwear</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Silver Jewellery</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Signature Sunglasses</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Exclusive Chains</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Premium Clothing</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Designer Hats</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Luxury Footwear</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Silver Jewellery</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Signature Sunglasses</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Exclusive Chains</span><span class="marquee-dot">◆</span>
+  </div>
+</div>
+
+<!-- SHOP SECTION -->
+<section class="shop-section" id="shop">
+  <div class="section-header">
+    <h2 class="section-title">The<br><span>Collections</span></h2>
+    <a href="#shop" class="see-all" onclick="showAllProducts(event)">View All →</a>
+  </div>
+
+  <div class="category-tabs">
+    <button class="tab-btn active" onclick="switchTab('clothing', this)">Clothing</button>
+    <button class="tab-btn" onclick="switchTab('hats', this)">Hats</button>
+    <button class="tab-btn" onclick="switchTab('shoes', this)">Shoes</button>
+    <button class="tab-btn" onclick="switchTab('sunglasses', this)">Sunglasses</button>
+    <button class="tab-btn" onclick="switchTab('rings', this)">Rings</button>
+    <button class="tab-btn" onclick="switchTab('chains', this)">Chains</button>
+  </div>
+
+  <!-- CLOTHING -->
+  <div class="tab-content active" id="tab-clothing">
+    <div class="product-grid">
+      <div class="product-card">
+        <div class="product-img">
+          <div class="product-img-inner"><img class="product-photo" src="/static/img/clothing_sage_overshirt.png" alt="Overshirt"></div>
+          <span class="product-badge">New</span>
+          <div class="product-overlay">
+            <button class="quick-add" onclick="addToCart('Sage Linen Overshirt',8400,'👔','Clothing','M')">Quick Add</button>
+          </div>
+        </div>
+        <a href="/product/clothing" class="product-detail-link">
+          <div class="product-name">Sage Linen Overshirt</div>
+        </a>
+        <div class="product-desc">Relaxed Fit · Sage Green</div>
+        <div class="product-price">₹ 8,400</div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">
+          <div class="product-img-inner"><img class="product-photo" src="/static/img/clothing_trench_coat.png" alt="Trench Coat"></div>
+          <div class="product-overlay">
+            <button class="quick-add" onclick="addToCart('Desert Trench Coat',22000,'🧥','Clothing','M')">Quick Add</button>
+          </div>
+        </div>
+        <a href="/product/clothing" class="product-detail-link">
+          <div class="product-name">Desert Trench Coat</div>
+        </a>
+        <div class="product-desc">Tailored · Beige</div>
+        <div class="product-price">₹ 22,000</div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">
+          <div class="product-img-inner"><img class="product-photo" src="/static/img/clothing_crew_tee.png" alt="Crew Tee"></div>
+          <span class="product-badge">Bestseller</span>
+          <div class="product-overlay">
+            <button class="quick-add" onclick="addToCart('Minimal Crew Tee',3200,'👕','Clothing','M')">Quick Add</button>
+          </div>
+        </div>
+        <a href="/product/clothing" class="product-detail-link">
+          <div class="product-name">Minimal Crew Tee</div>
+        </a>
+        <div class="product-desc">Heavyweight Cotton · Cream</div>
+        <div class="product-price">₹ 3,200</div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">
+          <div class="product-img-inner"><img class="product-photo" src="/static/img/clothing_wool_trousers.png" alt="Trousers"></div>
+          <div class="product-overlay">
+            <button class="quick-add" onclick="addToCart('Wide-Leg Wool Trousers',12500,'👖','Clothing','M')">Quick Add</button>
+          </div>
+        </div>
+        <a href="/product/clothing" class="product-detail-link">
+          <div class="product-name">Wide-Leg Wool Trousers</div>
+        </a>
+        <div class="product-desc">Premium Wool · Olive</div>
+        <div class="product-price">₹ 12,500</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HATS -->
+  <div class="tab-content" id="tab-hats">
+    <div class="product-grid">
+      <div class="product-card">
+        <div class="product-img">
+          <div class="product-img-inner"><img class="product-photo" src="/static/img/hat_bucket.png" alt="Bucket Hat"></div>
+          <span class="product-badge">Limited</span>
+          <div class="product-overlay">
+            <button class="quick-add" onclick="addToCart('Woven Bucket Hat',4800,'🎩','Hats','OS')">Quick Add</button>
+          </div>
+        </div>
+        <a href="/product/hats" class="product-detail-link"><div class="product-name">Woven Bucket Hat</div></a>
+        <div class="product-desc">Raffia Blend · Natural</div>
+        <div class="product-price">₹ 4,800</div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">
+          <div class="product-img-inner"><img class="product-photo" src="/static/img/hat_cap.png" alt="Cap"></div>
+          <div class="product-overlay">
+            <button class="quick-add" onclick="addToCart('Structured Cap',3600,'🧢','Hats','OS')">Quick Add</button>
+          </div>
+        </div>
+        <a href="/product/hats" class="product-detail-link"><div class="product-name">Structured Cap</div></a>
+        <div class="product-desc">Cotton Canvas · Sage</div>
+        <div class="product-price">₹ 3,600</div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">
+          <div class="product-img-inner"><img class="product-photo" src="/static/img/hat_sun.png" alt="Sun Hat"></div>
+          <span class="product-badge">New</span>
+          <div class="product-overlay">
+            <button class="quick-add" onclick="addToCart('Wide Brim Sun Hat',5200,'👒','Hats','OS')">Quick Add</button>
+          </div>
+        </div>
+        <a href="/product/hats" class="product-detail-link"><div class="product-name">Wide Brim Sun Hat</div></a>
+        <div class="product-desc">Straw Weave · Beige</div>
+        <div class="product-price">₹ 5,200</div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">
+          <div class="product-img-inner"><img class="product-photo" src="/static/img/hat_beanie.png" alt="Beanie"></div>
+          <div class="product-overlay">
+            <button class="quick-add" onclick="addToCart('Merino Beanie',2800,'🎓','Hats','OS')">Quick Add</button>
+          </div>
+        </div>
+        <a href="/product/hats" class="product-detail-link"><div class="product-name">Merino Beanie</div></a>
+        <div class="product-desc">Pure Merino Wool · Olive</div>
+        <div class="product-price">₹ 2,800</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SHOES -->
+  <div class="tab-content" id="tab-shoes">
+    <div class="product-grid">
+      <div class="product-card">
+        <div class="product-img">
+          <div class="product-img-inner"><img class="product-photo" src="/static/img/shoe_trainer.png" alt="Trainer"></div>
+          <span class="product-badge">New</span>
+          <div class="product-overlay">
+            <button class="quick-add" onclick="addToCart('Suede Low Trainer',18000,'👟','Shoes','42')">Quick Add</button>
+          </div>
+        </div>
+        <a href="/product/shoes" class="product-detail-link"><div class="product-name">Suede Low Trainer</div></a>
+        <div class="product-desc">Italian Suede · Moss</div>
+        <div class="product-price">₹ 18,000</div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">
+          <div class="product-img-inner"><img class="product-photo" src="/static/img/shoe_derby.png" alt="Derby"></div>
+          <span class="product-badge">Bestseller</span>
+          <div class="product-overlay">
+            <button class="quick-add" onclick="addToCart('Derby Lace-Up',24500,'👞','Shoes','42')">Quick Add</button>
+          </div>
+        </div>
+        <a href="/product/shoes" class="product-detail-link"><div class="product-name">Derby Lace-Up</div></a>
+        <div class="product-desc">Full-Grain Leather · Sand</div>
+        <div class="product-price">₹ 24,500</div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">
+          <div class="product-img-inner"><img class="product-photo" src="/static/img/shoe_loafer.png" alt="Loafer"></div>
+          <div class="product-overlay">
+            <button class="quick-add" onclick="addToCart('Slip-On Loafer',19800,'🥿','Shoes','42')">Quick Add</button>
+          </div>
+        </div>
+        <a href="/product/shoes" class="product-detail-link"><div class="product-name">Slip-On Loafer</div></a>
+        <div class="product-desc">Nappa Leather · Cream</div>
+        <div class="product-price">₹ 19,800</div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">
+          <div class="product-img-inner"><img class="product-photo" src="/static/img/shoe_boot.png" alt="Boot"></div>
+          <div class="product-overlay">
+            <button class="quick-add" onclick="addToCart('Combat Boot',28000,'🥾','Shoes','42')">Quick Add</button>
+          </div>
+        </div>
+        <a href="/product/shoes" class="product-detail-link"><div class="product-name">Combat Boot</div></a>
+        <div class="product-desc">Waxed Leather · Walnut</div>
+        <div class="product-price">₹ 28,000</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUNGLASSES -->
+  <div class="tab-content" id="tab-sunglasses">
+    <div class="product-grid">
+      <div class="product-card">
+        <div class="product-img">
+          <div class="product-img-inner"><img class="product-photo" src="/static/img/sun_square.png" alt="Square Sunglasses"></div>
+          <span class="product-badge">New</span>
+          <div class="product-overlay">
+            <button class="quick-add" onclick="addToCart('Oversized Square',12000,'🕶️','Sunglasses','OS')">Quick Add</button>
+          </div>
+        </div>
+        <a href="/product/sunglasses" class="product-detail-link"><div class="product-name">Oversized Square</div></a>
+        <div class="product-desc">Acetate · Sage Tint</div>
+        <div class="product-price">₹ 12,000</div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">
+          <div class="product-img-inner"><img class="product-photo" src="/static/img/sun_metal.png" alt="Metal Sunglasses"></div>
+          <span class="product-badge">Limited</span>
+          <div class="product-overlay">
+            <button class="quick-add" onclick="addToCart('Thin Metal Frame',9600,'👓','Sunglasses','OS')">Quick Add</button>
+          </div>
+        </div>
+        <a href="/product/sunglasses" class="product-detail-link"><div class="product-name">Thin Metal Frame</div></a>
+        <div class="product-desc">Silver Frame · Olive Lens</div>
+        <div class="product-price">₹ 9,600</div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">
+          <div class="product-img-inner"><img class="product-photo" src="/static/img/sun_aviator.png" alt="Aviator"></div>
+          <div class="product-overlay">
+            <button class="quick-add" onclick="addToCart('Teardrop Aviator',14200,'🕶️','Sunglasses','OS')">Quick Add</button>
+          </div>
+        </div>
+        <a href="/product/sunglasses" class="product-detail-link"><div class="product-name">Teardrop Aviator</div></a>
+        <div class="product-desc">Gold Frame · Brown Lens</div>
+        <div class="product-price">₹ 14,200</div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">
+          <div class="product-img-inner"><img class="product-photo" src="/static/img/sun_cateye.png" alt="Cat Eye"></div>
+          <div class="product-overlay">
+            <button class="quick-add" onclick="addToCart('Cat-Eye Classic',10800,'👓','Sunglasses','OS')">Quick Add</button>
+          </div>
+        </div>
+        <a href="/product/sunglasses" class="product-detail-link"><div class="product-name">Cat-Eye Classic</div></a>
+        <div class="product-desc">Tortoise Acetate · Black</div>
+        <div class="product-price">₹ 10,800</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RINGS -->
+  <div class="tab-content" id="tab-rings">
+    <div class="product-grid">
+      <div class="product-card">
+        <div class="product-img">
+          <div class="product-img-inner"><img class="product-photo" src="/static/img/ring_silver_serpent.png" alt="Serpent Coil Ring"></div>
+          <span class="product-badge">Signature</span>
+          <div class="product-overlay">
+            <button class="quick-add" onclick="addToCart('Serpent Coil Ring',6400,'💍','Rings','7')">Quick Add</button>
+          </div>
+        </div>
+        <a href="/product/rings" class="product-detail-link"><div class="product-name">Serpent Coil Ring</div></a>
+        <div class="product-desc">925 Sterling Silver</div>
+        <div class="product-price">₹ 6,400</div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">
+          <div class="product-img-inner"><img class="product-photo" src="/static/img/ring_silver_wide.png" alt="Band Ring Wide"></div>
+          <div class="product-overlay">
+            <button class="quick-add" onclick="addToCart('Band Ring Wide',4800,'⭕','Rings','7')">Quick Add</button>
+          </div>
+        </div>
+        <a href="/product/rings" class="product-detail-link"><div class="product-name">Band Ring Wide</div></a>
+        <div class="product-desc">Oxidised Silver · Chunky</div>
+        <div class="product-price">₹ 4,800</div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">
+          <div class="product-img-inner"><img class="product-photo" src="/static/img/ring_silver_signet.png" alt="Signet Ring"></div>
+          <span class="product-badge">New</span>
+          <div class="product-overlay">
+            <button class="quick-add" onclick="addToCart('Signet Ring',7200,'💎','Rings','7')">Quick Add</button>
+          </div>
+        </div>
+        <a href="/product/rings" class="product-detail-link"><div class="product-name">Signet Ring</div></a>
+        <div class="product-desc">Sterling Silver · Engraved</div>
+        <div class="product-price">₹ 7,200</div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">
+          <div class="product-img-inner"><img class="product-photo" src="/static/img/ring_silver_stone.png" alt="Stone Set Ring"></div>
+          <div class="product-overlay">
+            <button class="quick-add" onclick="addToCart('Stone Set Ring',9000,'🔮','Rings','7')">Quick Add</button>
+          </div>
+        </div>
+        <a href="/product/rings" class="product-detail-link"><div class="product-name">Stone Set Ring</div></a>
+        <div class="product-desc">Silver · Onyx Stone</div>
+        <div class="product-price">₹ 9,000</div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">
+          <div class="product-img-inner"><img class="product-photo" src="/static/img/ring_gold_dome.png" alt="18k Gold Dome Ring"></div>
+          <span class="product-badge">New</span>
+          <div class="product-overlay">
+            <button class="quick-add" onclick="addToCart('18k Gold Dome Ring',14500,'🟡','Rings','7')">Quick Add</button>
+          </div>
+        </div>
+        <a href="/product/rings" class="product-detail-link"><div class="product-name">18k Gold Dome Ring</div></a>
+        <div class="product-desc">Solid 18k Gold · Minimalist</div>
+        <div class="product-price">₹ 14,500</div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">
+          <div class="product-img-inner"><img class="product-photo" src="/static/img/ring_gold_twisted.png" alt="14k Gold Twisted Band"></div>
+          <div class="product-overlay">
+            <button class="quick-add" onclick="addToCart('14k Gold Twisted Band',12000,'💫','Rings','7')">Quick Add</button>
+          </div>
+        </div>
+        <a href="/product/rings" class="product-detail-link"><div class="product-name">14k Gold Twisted Band</div></a>
+        <div class="product-desc">14k Yellow Gold · Textured</div>
+        <div class="product-price">₹ 12,000</div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">
+          <div class="product-img-inner"><img class="product-photo" src="/static/img/ring_gold_diamond.png" alt="Gold Diamond Signet"></div>
+          <div class="product-overlay">
+            <button class="quick-add" onclick="addToCart('Gold Diamond Signet',28000,'👑','Rings','7')">Quick Add</button>
+          </div>
+        </div>
+        <a href="/product/rings" class="product-detail-link"><div class="product-name">Gold Diamond Signet</div></a>
+        <div class="product-desc">18k Gold · Lab-Grown Diamond</div>
+        <div class="product-price">₹ 28,000</div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">
+          <div class="product-img-inner"><img class="product-photo" src="/static/img/ring_gold_stacking.png" alt="Thin Gold Stacking Ring"></div>
+          <span class="product-badge">Bestseller</span>
+          <div class="product-overlay">
+            <button class="quick-add" onclick="addToCart('Thin Gold Stacking Ring',5500,'⏺️','Rings','7')">Quick Add</button>
+          </div>
+        </div>
+        <a href="/product/rings" class="product-detail-link"><div class="product-name">Thin Gold Stacking Ring</div></a>
+        <div class="product-desc">14k Solid Gold · 1.5mm</div>
+        <div class="product-price">₹ 5,500</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHAINS -->
+  <div class="tab-content" id="tab-chains">
+    <div class="product-grid">
+      <div class="product-card">
+        <div class="product-img">
+          <div class="product-img-inner"><img class="product-photo" src="/static/img/chain_silver_cuban.png" alt="Cuban Link Chain"></div>
+          <span class="product-badge">Signature</span>
+          <div class="product-overlay">
+            <button class="quick-add" onclick="addToCart('Cuban Link Chain',16800,'⛓️','Chains','OS')">Quick Add</button>
+          </div>
+        </div>
+        <a href="/product/chains" class="product-detail-link"><div class="product-name">Cuban Link Chain</div></a>
+        <div class="product-desc">925 Silver · 8mm</div>
+        <div class="product-price">₹ 16,800</div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">
+          <div class="product-img-inner"><img class="product-photo" src="/static/img/chain_silver_box.png" alt="Box Chain Necklace"></div>
+          <span class="product-badge">New</span>
+          <div class="product-overlay">
+            <button class="quick-add" onclick="addToCart('Box Chain Necklace',11200,'🔗','Chains','OS')">Quick Add</button>
+          </div>
+        </div>
+        <a href="/product/chains" class="product-detail-link"><div class="product-name">Box Chain Necklace</div></a>
+        <div class="product-desc">Sterling Silver · 4mm</div>
+        <div class="product-price">₹ 11,200</div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">
+          <div class="product-img-inner"><img class="product-photo" src="/static/img/chain_silver_rope.png" alt="Rope Chain"></div>
+          <div class="product-overlay">
+            <button class="quick-add" onclick="addToCart('Rope Chain',14000,'✨','Chains','OS')">Quick Add</button>
+          </div>
+        </div>
+        <a href="/product/chains" class="product-detail-link"><div class="product-name">Rope Chain</div></a>
+        <div class="product-desc">Oxidised Silver · 6mm</div>
+        <div class="product-price">₹ 14,000</div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">
+          <div class="product-img-inner"><img class="product-photo" src="/static/img/chain_silver_pendant.png" alt="Pendant Chain Set"></div>
+          <span class="product-badge">Limited</span>
+          <div class="product-overlay">
+            <button class="quick-add" onclick="addToCart('Pendant Chain Set',22500,'🌟','Chains','OS')">Quick Add</button>
+          </div>
+        </div>
+        <a href="/product/chains" class="product-detail-link"><div class="product-name">Pendant Chain Set</div></a>
+        <div class="product-desc">Pure Silver · 10mm</div>
+        <div class="product-price">₹ 22,500</div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">
+          <div class="product-img-inner"><img class="product-photo" src="/static/img/chain_gold_rope.png" alt="18k Gold Rope Chain"></div>
+          <span class="product-badge">Premium</span>
+          <div class="product-overlay">
+            <button class="quick-add" onclick="addToCart('18k Gold Rope Chain',32000,'✨','Chains','18&#34;')">Quick Add</button>
+          </div>
+        </div>
+        <a href="/product/chains" class="product-detail-link"><div class="product-name">18k Gold Rope Chain</div></a>
+        <div class="product-desc">Solid 18k Gold · 3mm</div>
+        <div class="product-price">₹ 32,000</div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">
+          <div class="product-img-inner"><img class="product-photo" src="/static/img/chain_gold_herringbone.png" alt="Gold Herringbone"></div>
+          <div class="product-overlay">
+            <button class="quick-add" onclick="addToCart('Gold Herringbone',24000,'⭐','Chains','16&#34;')">Quick Add</button>
+          </div>
+        </div>
+        <a href="/product/chains" class="product-detail-link"><div class="product-name">Gold Herringbone</div></a>
+        <div class="product-desc">14k Yellow Gold · Liquid Finish</div>
+        <div class="product-price">₹ 24,000</div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">
+          <div class="product-img-inner"><img class="product-photo" src="/static/img/chain_gold_figaro.png" alt="Gold Figaro Chain"></div>
+          <div class="product-overlay">
+            <button class="quick-add" onclick="addToCart('Gold Figaro Chain',45000,'〰️','Chains','20&#34;')">Quick Add</button>
+          </div>
+        </div>
+        <a href="/product/chains" class="product-detail-link"><div class="product-name">Gold Figaro Chain</div></a>
+        <div class="product-desc">Heavy 18k Gold · 5mm</div>
+        <div class="product-price">₹ 45,000</div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">
+          <div class="product-img-inner"><img class="product-photo" src="/static/img/chain_gold_pearl.png" alt="Gold Pearl Pendant"></div>
+          <span class="product-badge">New</span>
+          <div class="product-overlay">
+            <button class="quick-add" onclick="addToCart('Gold Pearl Pendant',18500,'🐚','Chains','18&#34;')">Quick Add</button>
+          </div>
+        </div>
+        <a href="/product/chains" class="product-detail-link"><div class="product-name">Gold Pearl Pendant</div></a>
+        <div class="product-desc">14k Gold · Pearl</div>
+        <div class="product-price">₹ 18,500</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BRAND STORY -->
+<section class="story-section" id="story">
+  <div class="story-visual">
+    <span class="story-number">6</span>
+    <div class="story-quote">
+      <p>"Six senses.<br>One style."</p>
+      <span>— The Sixsense Manifesto</span>
+    </div>
+  </div>
+  <div class="story-content">
+    <div class="story-label">Our Story</div>
+    <h2 class="story-heading">Crafted for Those<br>Who Feel Before They See</h2>
+    <p class="story-text">
+      Sixsense was born from a belief that true luxury is felt, not flaunted. We design premium clothing, footwear, accessories, and jewellery for individuals who dress as an extension of their inner world.<br><br>
+      Every piece is sourced with intention. From Italian suede to 925 sterling silver, we work only with materials that age beautifully and carry meaning.
+    </p>
+    <div class="story-stats">
+      <div class="stat-item"><span class="stat-num">04+</span><span class="stat-label">Years of Craft</span></div>
+      <div class="stat-item"><span class="stat-num">60+</span><span class="stat-label">Unique Pieces</span></div>
+      <div class="stat-item"><span class="stat-num">100%</span><span class="stat-label">Premium Materials</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ACCESSORIES SPOTLIGHT -->
+<section class="spotlight-section" id="accessories" onclick="this.classList.toggle('expanded')">
+  <div class="section-header">
+    <h2 class="section-title">Accessory<br><span>Spotlight</span></h2>
+    <div class="spotlight-toggle-text" style="font-size: 11px; letter-spacing: 3px; text-transform: uppercase; margin-top: 16px; opacity: 0.5; transition: opacity 0.5s;">Click to Reveal Elements</div>
+  </div>
+  <div class="spotlight-expand-wrapper">
+    <div class="spotlight-expand-inner">
+      <div class="spotlight-grid">
+        <div class="spotlight-card large" onclick="navigateToTab('chains', event)">
+      <div class="spotlight-inner sc-sage">
+        <span class="spotlight-bg-icon">⛓️</span>
+        <div class="spotlight-info">
+          <div class="spotlight-cat">Silver Jewellery</div>
+          <div class="spotlight-title">Chains &<br>Pendants</div>
+        </div>
+      </div>
+    </div>
+    <div class="spotlight-card" onclick="navigateToTab('rings', event)">
+      <div class="spotlight-inner sc-beige">
+        <span class="spotlight-bg-icon">💍</span>
+        <div class="spotlight-info">
+          <div class="spotlight-cat">Fine Silver</div>
+          <div class="spotlight-title">Rings</div>
+        </div>
+      </div>
+    </div>
+    <div class="spotlight-card" onclick="navigateToTab('sunglasses', event)">
+      <div class="spotlight-inner sc-dark">
+        <span class="spotlight-bg-icon">🕶️</span>
+        <div class="spotlight-info">
+          <div class="spotlight-cat">Eyewear</div>
+          <div class="spotlight-title">Sunglasses</div>
+        </div>
+      </div>
+    </div>
+    <div class="spotlight-card" onclick="navigateToTab('hats', event)">
+      <div class="spotlight-inner sc-silver">
+        <span class="spotlight-bg-icon">🎩</span>
+        <div class="spotlight-info">
+          <div class="spotlight-cat">Headwear</div>
+          <div class="spotlight-title">Hats</div>
+        </div>
+      </div>
+    </div>
+    <div class="spotlight-card" onclick="navigateToTab('shoes', event)">
+      <div class="spotlight-inner sc-sage-light">
+        <span class="spotlight-bg-icon">👟</span>
+        <div class="spotlight-info">
+          <div class="spotlight-cat">Footwear</div>
+          <div class="spotlight-title">Shoes</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter-section">
+  <div class="nl-left">
+    <div class="nl-eyebrow">Stay Informed</div>
+    <h2 class="nl-heading">The <em>Sixsense</em><br>Inner Circle</h2>
+  </div>
+  <div class="nl-right">
+    <p class="nl-text">Be the first to discover new collections, exclusive drops, and the stories behind each piece. No noise — only what matters.</p>
+    <div class="nl-form">
+      <input class="nl-input" type="email" placeholder="your@email.com">
+      <button class="nl-submit">Join</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <span class="footer-logo">SIX<span>SENSE</span></span>
+      <p class="footer-tagline">Premium clothing, footwear, jewellery, and accessories — for those who dress with intention.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Collections</h4>
+      <ul>
+        <li><a href="/product/clothing">Clothing</a></li>
+        <li><a href="/product/hats">Hats</a></li>
+        <li><a href="/product/shoes">Shoes</a></li>
+        <li><a href="/product/sunglasses">Sunglasses</a></li>
+        <li><a href="/product/rings">Rings</a></li>
+        <li><a href="/product/chains">Chains</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Information</h4>
+      <ul>
+        <li><a href="#story">About Us</a></li>
+        <li><a href="#">Sustainability</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <ul>
+        <li><a href="#">Sizing Guide</a></li>
+        <li><a href="#">Returns</a></li>
+        <li><a href="#">Shipping</a></li>
+        <li><a href="/cart">My Bag</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 Sixsense. All Rights Reserved.</span>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/s__piyush/?hl=en" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://in.pinterest.com/thekarans06/" target="_blank" rel="noopener noreferrer">Pinterest</a>
+      <a href="#" onclick="showEmailPopup(event)">Email</a>
+    </div>
+  </div>
+</footer>
+
+<script src="/static/js/main.js"></script>
+</body>
+</html>

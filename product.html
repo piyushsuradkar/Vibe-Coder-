@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product — SIXSENSE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/style.css">
+<script>
+// Dynamic product rendering driven by index.html click interception via localStorage
+const CAT_DEFAULTS = {
+  '/product/clothing': { cat: 'Clothing', sizes: ['XS','S','M','L','XL'], material: '100% Belgian Linen', care: 'Hand wash cold. Lay flat to dry.', origin: 'Made in India' },
+  '/product/hats': { cat: 'Hats', sizes: ['S/M','L/XL'], material: 'Raffia & Cotton Blend', care: 'Spot clean only. Store with shape.', origin: 'Handcrafted in Rajasthan' },
+  '/product/shoes': { cat: 'Shoes', sizes: ['40','41','42','43','44','45'], material: 'Italian Suede Upper, Rubber Sole', care: 'Suede brush + protective spray.', origin: 'Made in Italy' },
+  '/product/sunglasses': { cat: 'Sunglasses', sizes: ['One Size'], material: 'Italian Acetate, CR-39 Lens', care: 'Clean with microfibre cloth.', origin: 'Made in Italy' },
+  '/product/rings': { cat: 'Rings', sizes: ['5','6','7','8','9','10'], material: '925 Sterling Silver', care: 'Polish with silver cloth. Avoid moisture.', origin: 'Handcrafted in Mumbai' },
+  '/product/chains': { cat: 'Chains', sizes: ['16"','18"','20"','22"','24"'], material: '925 Sterling Silver', care: 'Store in pouch. Polish regularly.', origin: 'Handcrafted in Mumbai' }
+};
+
+function renderProduct() {
+  let viewData = {};
+  try { viewData = JSON.parse(localStorage.getItem('currentProductView') || '{}'); } catch(e){}
+
+  const currentPath = window.location.pathname;
+  // If the stored clicked product matches our current path category, use it. Otherwise fallback.
+  const isMatch = (viewData.catUrl && viewData.catUrl === currentPath);
+  
+  const defaults = CAT_DEFAULTS[currentPath] || CAT_DEFAULTS['/product/clothing'];
+  
+  const p = {
+    name: isMatch && viewData.name ? viewData.name : "Sixsense Signature Item",
+    price: isMatch && viewData.price ? viewData.price : 12000,
+    sub: isMatch && viewData.sub ? viewData.sub : "Premium Collection",
+    cat: defaults.cat,
+    sizes: defaults.sizes,
+    material: defaults.material,
+    care: defaults.care,
+    origin: defaults.origin,
+    imgSrc: isMatch && viewData.imgSrc ? viewData.imgSrc : "",
+    icon: isMatch && viewData.icon ? viewData.icon : "✨"
+  };
+
+  const priceStr = '₹ ' + p.price.toLocaleString('en-IN');
+
+  const imgContainer = document.getElementById('p-img-container');
+  if (p.imgSrc) {
+    imgContainer.innerHTML = `<img class="product-photo" style="object-fit: contain; mix-blend-mode: darken; width: 100%; height: 100%;" src="${p.imgSrc}" alt="${p.name}">`;
+  } else {
+    imgContainer.innerHTML = `<span id="p-icon" style="font-size: 160px; line-height: 1;">${p.icon}</span>`;
+  }
+
+  document.getElementById('p-cat').textContent   = p.cat;
+  document.getElementById('p-cat-label').textContent = p.cat;
+  document.getElementById('p-name').textContent  = p.name;
+  document.getElementById('p-sub').textContent   = p.sub;
+  document.getElementById('p-price').textContent = priceStr;
+  
+  document.getElementById('p-desc').textContent  = `Experience the finest craftsmanship with the ${p.name}. Designed to be a staple in your collection, it perfectly embodies the Sixsense aesthetic of subtle luxury and undeniable quality.`;
+  
+  document.title = p.name + ' — SIXSENSE';
+
+  const sizeGrid = document.getElementById('size-grid');
+  sizeGrid.innerHTML = p.sizes.map((s,i) =>
+    `<button class="size-btn${i===0?' active':''}" onclick="selectSize(this)">${s}</button>`
+  ).join('');
+
+  document.getElementById('m-material').textContent = p.material;
+  document.getElementById('m-care').textContent     = p.care;
+  document.getElementById('m-origin').textContent   = p.origin;
+
+  document.getElementById('add-btn').onclick = () => {
+    const active = document.querySelector('.size-btn.active');
+    const size   = active ? active.textContent : p.sizes[0];
+    addToCart(p.name, p.price, p.imgSrc ? `<img src="${p.imgSrc}" style="width:100%;height:100%;object-fit:cover;">` : p.icon, p.cat, size);
+  };
+}
+
+document.addEventListener('DOMContentLoaded', renderProduct);
+</script>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav>
+  <a href="/" class="nav-logo">SIX<span>SENSE</span></a>
+  <ul class="nav-links">
+    <li><a href="/#shop">Collections</a></li>
+    <li><a href="/#story">Our Story</a></li>
+    <li><a href="/contact">Contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <a href="/cart" class="nav-icon" style="position:relative;">
+      Bag
+      <span class="cart-count" style="display:none;">0</span>
+    </a>
+  </div>
+</nav>
+
+<div class="page-wrapper">
+  <!-- breadcrumb -->
+  <div style="margin-bottom:48px; font-size:9px; letter-spacing:3px; text-transform:uppercase; color:var(--walnut);">
+    <a href="/" style="color:var(--walnut); text-decoration:none;">Home</a>
+    <span style="margin:0 12px; opacity:0.5;">→</span>
+    <a href="/#shop" style="color:var(--walnut); text-decoration:none;">Collections</a>
+    <span style="margin:0 12px; opacity:0.5;">→</span>
+    <span id="p-cat" style="color:var(--sage);">—</span>
+  </div>
+
+  <div class="product-detail-layout">
+    <div class="product-detail-img" id="p-img-container"></div>
+
+    <div class="product-detail-info">
+      <div class="product-detail-cat" id="p-cat-label">—</div>
+      <div class="product-detail-name" id="p-name">—</div>
+      <div class="product-detail-sub" id="p-sub">—</div>
+      <div class="product-detail-price" id="p-price">—</div>
+      <p class="product-detail-desc" id="p-desc">—</p>
+
+      <div class="size-label">Select Size</div>
+      <div class="size-grid" id="size-grid"></div>
+
+      <button class="add-to-cart-btn" id="add-btn">Add to Bag</button>
+
+      <div class="product-meta">
+        <div class="meta-row"><span>Material</span><span id="m-material">—</span></div>
+        <div class="meta-row"><span>Care</span><span id="m-care">—</span></div>
+        <div class="meta-row"><span>Origin</span><span id="m-origin">—</span></div>
+        <div class="meta-row"><span>Delivery</span><span>3–5 Working Days</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-bottom" style="border-top:none; padding-top:40px; padding-bottom:20px;">
+    <span class="footer-copy">© 2026 Sixsense. All Rights Reserved.</span>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/s__piyush/?hl=en" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://in.pinterest.com/thekarans06/" target="_blank" rel="noopener noreferrer">Pinterest</a>
+      <a href="#" onclick="showEmailPopup(event)">Email</a>
+    </div>
+  </div>
+</footer>
+
+<script src="/static/js/main.js"></script>
+</body>
+</html>

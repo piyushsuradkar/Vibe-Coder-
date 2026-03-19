@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — SIXSENSE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav>
+  <a href="/" class="nav-logo">SIX<span>SENSE</span></a>
+  <ul class="nav-links">
+    <li><a href="/#shop">Collections</a></li>
+    <li><a href="/#story">Our Story</a></li>
+    <li><a href="/contact">Contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <a href="/cart" class="nav-icon" style="position:relative;">
+      Bag
+      <span class="cart-count" style="display:none;">0</span>
+    </a>
+  </div>
+</nav>
+
+<div class="page-wrapper">
+  <h1 class="page-title">Get in <span>Touch</span></h1>
+
+  <div class="contact-layout">
+    <div class="contact-info">
+      <p class="contact-intro">
+        We're a small, intentional brand — and that means every message is read personally. Whether you have a question about an order, a size query, or simply want to know more about our craft, we're here.
+      </p>
+      <div class="contact-detail">
+        <div class="contact-detail-item">
+          <h4>Email</h4>
+          <p>hello@sixsense.in</p>
+        </div>
+        <div class="contact-detail-item">
+          <h4>Phone</h4>
+          <p>+91 98765 43210</p>
+        </div>
+        <div class="contact-detail-item">
+          <h4>Studio</h4>
+          <p>Mumbai, Maharashtra, India</p>
+        </div>
+        <div class="contact-detail-item">
+          <h4>Hours</h4>
+          <p>Mon – Sat, 10am – 6pm IST</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <form id="contact-form">
+        <div class="form-group">
+          <label class="form-label" for="name">Full Name</label>
+          <input class="form-input" type="text" id="name" name="name" placeholder="Your name" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="email">Email Address</label>
+          <input class="form-input" type="email" id="email" name="email" placeholder="your@email.com" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="subject">Subject</label>
+          <input class="form-input" type="text" id="subject" name="subject" placeholder="Order enquiry, sizing, etc.">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="message">Message</label>
+          <textarea class="form-textarea" id="message" name="message" placeholder="Tell us how we can help..." required></textarea>
+        </div>
+        <button type="submit" class="form-submit">Send Message</button>
+        <div class="form-success" id="form-success">
+          Thank you — we'll be in touch within 24 hours.
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-bottom" style="border-top:none; padding-top:40px; padding-bottom:20px;">
+    <span class="footer-copy">© 2026 Sixsense. All Rights Reserved.</span>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/s__piyush/?hl=en" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://in.pinterest.com/thekarans06/" target="_blank" rel="noopener noreferrer">Pinterest</a>
+      <a href="#" onclick="showEmailPopup(event)">Email</a>
+    </div>
+  </div>
+</footer>
+
+<script src="/static/js/main.js"></script>
+</body>
+</html>

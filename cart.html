@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Bag — SIXSENSE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav>
+  <a href="/" class="nav-logo">SIX<span>SENSE</span></a>
+  <ul class="nav-links">
+    <li><a href="/#shop">Collections</a></li>
+    <li><a href="/#story">Our Story</a></li>
+    <li><a href="/contact">Contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <a href="/cart" class="nav-icon" style="position:relative;">
+      Bag
+      <span class="cart-count" style="display:none;">0</span>
+    </a>
+  </div>
+</nav>
+
+<div class="page-wrapper">
+  <h1 class="page-title">Your <span>Bag</span></h1>
+
+  <div class="cart-layout">
+    <div>
+      <!-- Cart items rendered by JS -->
+      <div id="cart-list"></div>
+
+      <!-- Empty state -->
+      <div id="cart-empty" style="display:none;">
+        <p>Your bag is empty.</p>
+        <a href="/" class="btn-primary">Continue Shopping</a>
+      </div>
+
+      <!-- Checkout Form -->
+      <div id="checkout-container" style="display:none; margin-top: 20px;">
+        <h2 style="font-family:'Cormorant Garamond', serif; font-size:26px; font-weight:300; margin-bottom:24px; border-bottom:1px solid #EBEBEB; padding-bottom:12px;">Contact & Shipping</h2>
+        <form id="checkout-form" class="checkout-form">
+          <div class="form-row"><input type="email" placeholder="Email Address" required></div>
+          <div class="form-row double">
+            <input type="text" placeholder="First Name" required>
+            <input type="text" placeholder="Last Name" required>
+          </div>
+          <div class="form-row"><input type="text" placeholder="Address" required></div>
+          <div class="form-row double">
+            <input type="text" placeholder="City" required>
+            <input type="text" placeholder="State/Province" required>
+          </div>
+          <div class="form-row"><input type="text" placeholder="ZIP / Postal Code" required></div>
+
+          <h2 style="font-family:'Cormorant Garamond', serif; font-size:26px; font-weight:300; margin-top:48px; margin-bottom:24px; border-bottom:1px solid #EBEBEB; padding-bottom:12px;">Payment</h2>
+          <div class="payment-methods">
+            <label class="payment-option active" onclick="selectPayment(this)">
+              <input type="radio" name="payment" value="card" checked style="display:none;">
+              <span>Card</span>
+            </label>
+            <label class="payment-option" onclick="selectPayment(this)">
+              <input type="radio" name="payment" value="upi" style="display:none;">
+              <span>UPI</span>
+            </label>
+            <label class="payment-option" onclick="selectPayment(this)">
+              <input type="radio" name="payment" value="paypal" style="display:none;">
+              <span>PayPal</span>
+            </label>
+          </div>
+          
+          <div id="card-details" class="card-details">
+            <div class="form-row"><input type="text" placeholder="Card Number" maxlength="19" required></div>
+            <div class="form-row double">
+              <input type="text" placeholder="MM / YY" maxlength="5" required>
+              <input type="text" placeholder="CVC" maxlength="4" required>
+            </div>
+          </div>
+
+          <div id="upi-details" class="card-details" style="display:none;">
+            <div class="form-row"><input type="text" placeholder="Enter UPI ID (e.g. name@okicici)"></div>
+            <div style="font-size: 11px; opacity: 0.6; padding-left: 2px;">Supported: GPay, PhonePe, Paytm, CRED, BHIM</div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Summary -->
+    <div class="cart-summary" id="cart-summary" style="display:none;">
+      <div class="summary-title">Order Summary</div>
+      <div class="summary-row">
+        <span>Subtotal</span>
+        <span id="summary-subtotal">—</span>
+      </div>
+      <div class="summary-row">
+        <span>Shipping</span>
+        <span id="summary-shipping">—</span>
+      </div>
+      <div class="summary-total">
+        <span>Total</span>
+        <span id="summary-total">—</span>
+      </div>
+      <button class="checkout-btn" onclick="proceedToCheckout(this)">Proceed to Checkout</button>
+      <div style="margin-top:20px; text-align:center;">
+        <a href="/" style="font-size:9px; letter-spacing:2px; text-transform:uppercase; color:var(--walnut); text-decoration:none;">← Continue Shopping</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-bottom" style="border-top:none; padding-top:40px; padding-bottom:20px;">
+    <span class="footer-copy">© 2026 Sixsense. All Rights Reserved.</span>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/s__piyush/?hl=en" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://in.pinterest.com/thekarans06/" target="_blank" rel="noopener noreferrer">Pinterest</a>
+      <a href="#" onclick="showEmailPopup(event)">Email</a>
+    </div>
+  </div>
+</footer>
+
+<script src="/static/js/main.js"></script>
+</body>
+</html>
